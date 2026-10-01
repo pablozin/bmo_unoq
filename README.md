@@ -2,6 +2,8 @@
 
 Physical assistant inspired by BMO, running on the **Arduino UNO Q**. It uses a TFT display, local AI (Ollama), and Spotify integration.
 
+![BMO](/assets/Untitled.jpg)
+
 > **Status:** Under development, but fully functional. Responsive dual-brain architecture with local neural inference, live token streaming, and Spotify playback control.
 
 The board has two processors. The **MPU** runs Linux and handles the heavy lifting (Flask, Ollama, Spotify, math). The **MCU** drives the display and animations. They talk via MessagePack-RPC through the Arduino Router.
