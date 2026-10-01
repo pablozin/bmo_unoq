@@ -42,33 +42,6 @@ The ST7735 is driven by a custom SPI driver instead of Adafruit_GFX / TFT_eSPI. 
 - Direct control for text, animations, marquee, and equalizer
 - Keeps the MCU responsive while handling messages from Linux
 
-## Request flow
-
-```mermaid
-sequenceDiagram
-participant U as User
-participant F as Flask
-participant Q as Ollama
-participant R as Arduino Router
-participant M as MCU
-participant D as Display
-
-U->>F: Question / Command
-F->>R: State = THINKING
-R->>M: Update state
-M->>D: Animate shifting eyes + show prompt
-F->>Q: Stream reply (stream=True)
-loop Token Streaming
-    Q-->>F: Chunked tokens
-    F->>R: Incremental text + SPEAKING
-    R->>M: Forward chunk
-    M->>D: Live terminal render + mouth anim
-end
-F->>R: Stream complete + STANDBY
-R->>M: Update state
-M->>D: Happy face + continuous smooth scroll
-```
-
 ## State machine
 
 ```mermaid
