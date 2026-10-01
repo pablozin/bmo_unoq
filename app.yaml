@@ -1,0 +1,6 @@
+name: bmo
+description: ""
+ports:
+- 5000
+bricks: []
+icon: 🤖

@@ -1,0 +1,6 @@
+flask
+requests
+msgpack
+sympy
+spotipy
+python-dotenv
